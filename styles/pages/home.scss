@@ -1,0 +1,183 @@
+.product {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin: auto;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    bottom: 0;
+    right: 32px;
+    
+    @include tablet {
+        left: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    @include widescreen {
+        right: 64px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.selected_1 {
+    .product_1 {
+        transform: translate3d(-200px, 0px, 0) scale(3.2);
+
+        @include tablet {
+            transform: translate3d(-300px, 0px, 0) scale(3.2);
+        }
+
+        @include widescreen {
+            transform: translate3d(-360px, 0px, 0) scale(4);
+        }
+    }
+
+    .product_2 {
+        transform: translate3d(0px, -100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, -100px, 0);
+        }
+    }
+
+    .product_3 {
+        transform: translate3d(0px, 0, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 0, 0);
+        }
+    }
+
+    .product_4 {
+        transform: translate3d(0px, 100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 100px, 0);
+        }
+    }
+}
+
+
+.selected_2 {
+    .product_1 {
+        transform: translate3d(0px, 100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 100px, 0);
+        }
+    }
+
+    .product_2 {
+        transform: translate3d(-200px, 0px, 0) scale(3.2);
+
+        @include tablet {
+            transform: translate3d(-300px, 0px, 0) scale(3.2);
+        }
+
+        @include widescreen {
+            transform: translate3d(-360px, 0px, 0) scale(4);
+        }
+    }
+
+    .product_3 {
+        transform: translate3d(0px, -100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, -100px, 0);
+        }
+    }   
+    
+    .product_4 {
+        transform: translate3d(0px, 0, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 0, 0);
+        }
+    }
+}
+
+
+.selected_3 {
+    .product_1 {
+        transform: translate3d(0px, 0, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 0, 0);
+        }
+    }
+
+    .product_2 {
+        transform: translate3d(0px, 100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 100px, 0);
+        }
+    }
+
+    .product_3 {
+        transform: translate3d(-200px, 0px, 0) scale(3.2);
+
+        @include tablet {
+            transform: translate3d(-300px, 0px, 0) scale(3.2);
+        }
+
+        @include widescreen {
+            transform: translate3d(-360px, 0px, 0) scale(4);
+        }
+    }
+
+    .product_4 {
+        transform: translate3d(0px, -100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, -100px, 0);
+        }
+    }   
+}
+
+
+.selected_4 {
+    .product_1 {
+        transform: translate3d(0px, -100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, -100px, 0);
+        }
+    }   
+    
+    .product_2 {
+        transform: translate3d(0px, 0, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 0, 0);
+        }
+    }
+
+    .product_3 {
+        transform: translate3d(0px, 100px, 0);
+
+        @include tablet {
+            transform: translate3d(0px, 100px, 0);
+        }
+    }
+
+    .product_4 {
+        transform: translate3d(-200px, 0px, 0) scale(3.2);
+
+        @include tablet {
+            transform: translate3d(-300px, 0px, 0) scale(3.2);
+        }
+
+        @include widescreen {
+            transform: translate3d(-360px, 0px, 0) scale(4);
+        }
+    }
+}
