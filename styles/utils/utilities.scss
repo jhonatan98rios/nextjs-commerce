@@ -1,0 +1,21 @@
+.zoom-95 {
+    zoom: .95;
+}
+
+.lg-zoom-75 {
+    @include desktop {
+        zoom: .75;
+    }
+}
+
+.xl-zoom-90 {
+    @include widescreen {
+        zoom: .90;
+    }
+}
+
+.xxl-zoom-normal {
+    @include fullhd {
+        zoom: normal;
+    }
+}
