@@ -2,15 +2,21 @@
     zoom: .95;
 }
 
+.small-zoom-75 {
+    @media(max-width: 768px) {
+        zoom: .8;
+    }
+}
+
 .lg-zoom-75 {
     @include desktop {
         zoom: .75;
     }
 }
 
-.xl-zoom-90 {
+.xl-zoom-95 {
     @include widescreen {
-        zoom: .90;
+        zoom: .95;
     }
 }
 

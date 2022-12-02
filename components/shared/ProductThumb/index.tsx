@@ -17,26 +17,30 @@ export default function ProductThumb({ name, price, rate, rateAmount, link, isFa
     /* lg:scale-75 xl:scale-100 */
 
     return (
-        <div className="w-[300px] h-[450px] flex flex-col m-4 lg-zoom-75 xl-zoom-90 xxl-zoom-normal">
-
-            <div className="w-full h-[300px] bg-neutral-100 mb-4 rounded-2xl flex justify-center items-center">
+        <div className="w-[180px] h-[300px] md:w-[300px] md:h-[450px] flex flex-col m-2">
+            <div className="relative w-full h-[180px] md:h-[300px] bg-neutral-100 mb-4 rounded-2xl flex justify-center items-center">
                 <ResponseImage 
                     {...image}
-                    className="w-[260px]" 
+                    className="w-[180px] md:w-[260px]" 
                 />
+                {
+                    isFavorited
+                    ? <AiFillStar className="absolute right-0 top-0 md:right-2 md:top-2 z-10 text-[24px] md:text-[32px] text-yellow-400" />
+                    : <AiOutlineStar className="absolute right-0 top-0 md:right-2 md:top-2 z-10 text-[24px] md:text-[32px] text-neutral-400" />
+                }
             </div>
 
             <div className="w-full">
-                <p className="text-xl">{name}</p>
-                <p className="text-xl ">R${price},00</p>
+                <p className="text-sm md:text-xl font-medium">{name}</p>
+                <p className="text-sm md:text-xl ">R${price},00</p>
                 <div className="flex items-center">
                     <div className="flex items-center">
-                    { Array.from(Array(rate), (e, i) => <AiFillStar className="text-primary" />) }
-                    { Array.from(Array(5-rate), (e, i) => <AiOutlineStar />) }
+                    { Array.from(Array(rate), (e, i) => <AiFillStar className="text-primary text-xs md:text-sm" />) }
+                    { Array.from(Array(5-rate), (e, i) => <AiOutlineStar className="text-xs md:text-sm" />) }
                     </div>
-                    <p>({rateAmount})</p>
+                    <p className="text-sm ml-1.5">({rateAmount})</p>
                 </div>
-                <button className="button bg-primary rounded-full px-3.5 py-1 text-white mt-5">
+                <button className="button bg-primary rounded-full px-3.5 py-1 text-white mt-3 text-sm md:text-base w-full md:mt-5">
                     Detalhes
                 </button>
             </div>
