@@ -6,28 +6,28 @@ function Home() {
   const [ selected, setSelected ] = useState(0)
 
   const products = [{
-    name: 'Dualsense <span>Customizado</span>',
+    name: 'Dualsense <br><span>Customizado</span>',
     price: 800,
     image: {
       desktop: '/mock/desktop/dualshock.png',
       touch: '/mock/touch/dualshock.png',
     }
   }, {
-    name: 'RTX 3050 <br> <span>8GB VRAM</span>',
+    name: 'RTX 3050 <br><span>8GB VRAM</span>',
     price: 3000,
     image: {
       desktop: '/mock/desktop/gpu.png',
       touch: '/mock/touch/gpu.png',
     }
   }, {
-    name: 'Playstation 4 <br> <span>HD 500gb</span>',
+    name: 'Playstation 4 <br><span>HD 500gb</span>',
     price: 2000,
     image: {
       desktop: '/mock/desktop/ps4.png',
       touch: '/mock/touch/ps4.png',
     }
   }, {
-    name: 'Controle <br> Xbox Series S <br> <span>Edição Especial</span>',
+    name: 'Controle <br> Xbox Series S/X <br><span>Edição Especial</span>',
     price: 900,
     image: {
       desktop: '/mock/desktop/xbox-shift.png',
@@ -36,7 +36,7 @@ function Home() {
   }]
 
   return (
-    <div className="hero">
+    <div className="hero border-b-2 border-neutral-100">
       <div className="container columns-2 gap-8 mx-auto lg:h-[840px] flex flex-col-reverse lg:flex-row items-center py-10">
 
         <div className='w-full lg:w-6/12 ml-0 lg:ml-8 xl:ml-16 px-8 md:px-0 flex flex-col md:block'>
