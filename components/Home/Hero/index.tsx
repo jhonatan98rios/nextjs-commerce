@@ -1,41 +1,58 @@
 import { useState } from 'react'
+import ResponsiveImage from '../../shared/ResponsiveImage'
 
 function Home() {
 
-  const [ selected, setSelected ] = useState(1)
+  const [ selected, setSelected ] = useState(0)
 
   const products = [{
-    name: 'Produto 1',
+    name: 'Dualsense <span>Customizado</span>',
     price: 800,
-    image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/brazilian/ds4_controller.png'
+    image: {
+      desktop: '/mock/desktop/dualshock.png',
+      touch: '/mock/touch/dualshock.png',
+    }
   }, {
-    name: 'Produto 2',
-    price: 1800,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/76/PlayStation_3_SIXAXIS_controller.png'
+    name: 'RTX 3050 <br> <span>8GB VRAM</span>',
+    price: 3000,
+    image: {
+      desktop: '/mock/desktop/gpu.png',
+      touch: '/mock/touch/gpu.png',
+    }
   }, {
-    name: 'Produto 3',
-    price: 50,
-    image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/brazilian/ds4_controller.png'
+    name: 'Playstation 4 <br> <span>HD 500gb</span>',
+    price: 2000,
+    image: {
+      desktop: '/mock/desktop/ps4.png',
+      touch: '/mock/touch/ps4.png',
+    }
   }, {
-    name: 'Produto 4',
-    price: 100,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/76/PlayStation_3_SIXAXIS_controller.png'
+    name: 'Controle <br> Xbox Series S <br> <span>Edição Especial</span>',
+    price: 900,
+    image: {
+      desktop: '/mock/desktop/xbox-shift.png',
+      touch: '/mock/touch/xbox-shift.png',
+    }
   }]
 
   return (
-    <div className="bg-indigo-100">
-      <div className="container columns-2 gap-8 mx-auto bg-indigo-200 lg:h-96 flex flex-col-reverse lg:flex-row items-center">
+    <div className="hero">
+      <div className="container columns-2 gap-8 mx-auto lg:h-[840px] flex flex-col-reverse lg:flex-row items-center py-10">
 
-        <div className='w-full lg:w-6/12 ml-0 lg:ml-8 xl:ml-16'>
-          <p className='text-[4rem]'>{ products[selected].name }</p>
-          <p className='text-[3rem]'>R${ products[selected].price }</p>
-          <button className='bg-blue-500 text-white rounded px-8 py-5 text-[2rem]'>
+        <div className='w-full lg:w-6/12 ml-0 lg:ml-8 xl:ml-16 px-8 md:px-0 flex flex-col md:block'>
+          <p 
+            className='product-name font-bold 
+              text-4xl md:text-[3rem] xl:text-[4rem] md:leading-[3rem] lg:leading-[4rem]' 
+            dangerouslySetInnerHTML={{__html: products[selected].name }} 
+          />
+          <p className='text-4xl md:text-[3rem] font-bold md:mt-4'>R${ products[selected].price }</p>
+          <button className='bg-primary text-white rounded-full px-8 py-3 md:py-5 text-xl md:text-[2rem] font-bold mt-5 md:mt-8'>
             Adicionar ao carrinho
           </button>
         </div>
 
-        <div className="w-full lg:w-6/12 bg-blue-100 h-96">
-          <div className={`relative h-96 selected_${selected+1}`}>
+        <div className="w-full lg:w-6/12">
+          <div className={`relative h-[300px] md:h-[480px] selected_${selected+1}`}>
             {products.map((product, index) => {
               return (
                 <div 
@@ -43,7 +60,7 @@ function Home() {
                   onClick={() => setSelected(index)}
                   key={index}
                 >
-                  <img src={product.image} alt="" />
+                  <ResponsiveImage {...product.image} />
                 </div>
               )
             })}
