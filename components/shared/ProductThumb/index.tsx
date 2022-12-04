@@ -17,7 +17,7 @@ export default function ProductThumb({ name, price, rate, rateAmount, link, isFa
     /* lg:scale-75 xl:scale-100 */
 
     return (
-        <div className="w-[180px] h-[300px] md:w-[300px] md:h-[450px] flex flex-col m-2">
+        <div className="w-[180px] h-[300px] md:w-[300px] md:h-[450px] flex flex-col m-2 mini-zoom-8">
             <div className="relative w-full h-[180px] md:h-[300px] bg-neutral-100 mb-4 rounded-2xl flex justify-center items-center">
                 <ResponseImage 
                     {...image}
@@ -31,12 +31,12 @@ export default function ProductThumb({ name, price, rate, rateAmount, link, isFa
             </div>
 
             <div className="w-full">
-                <p className="text-sm md:text-xl font-medium">{name}</p>
-                <p className="text-sm md:text-xl ">R${price},00</p>
+                <p className="text-sm md:text-xl font-bold">{name}</p>
+                <p className="text-sm md:text-xl font-medium">R${price},00</p>
                 <div className="flex items-center">
                     <div className="flex items-center">
-                    { Array.from(Array(rate), (e, i) => <AiFillStar className="text-primary text-xs md:text-sm" />) }
-                    { Array.from(Array(5-rate), (e, i) => <AiOutlineStar className="text-xs md:text-sm" />) }
+                    { Array.from(Array(rate), (e, i) => <AiFillStar className="text-primary text-xs md:text-sm" key={i} />) }
+                    { Array.from(Array(5-rate), (e, i) => <AiOutlineStar className="text-xs md:text-sm" key={i} />) }
                     </div>
                     <p className="text-sm ml-1.5">({rateAmount})</p>
                 </div>

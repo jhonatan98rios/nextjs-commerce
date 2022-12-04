@@ -2,9 +2,15 @@
     zoom: .95;
 }
 
+.mini-zoom-8 {
+    @media(max-width: 424px) {
+        zoom: .8;
+    }
+}
+
 .small-zoom-75 {
     @media(max-width: 768px) {
-        zoom: .8;
+        zoom: .75;
     }
 }
 
