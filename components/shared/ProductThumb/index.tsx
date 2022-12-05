@@ -14,10 +14,8 @@ export interface ProductThumbProps {
 
 export default function ProductThumb({ name, price, rate, rateAmount, link, isFavorited, image }: ProductThumbProps) {
 
-    /* lg:scale-75 xl:scale-100 */
-
     return (
-        <div className="w-[180px] h-[300px] md:w-[300px] md:h-[450px] flex flex-col m-2 mini-zoom-8">
+        <div className="w-[180px] h-[300px] md:w-[300px] md:h-[450px] flex flex-col mx-2 my-4 mini-zoom-8">
             <div className="relative w-full h-[180px] md:h-[300px] bg-neutral-100 mb-4 rounded-2xl flex justify-center items-center">
                 <ResponseImage 
                     {...image}

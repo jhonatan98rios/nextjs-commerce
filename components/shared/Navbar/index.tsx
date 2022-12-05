@@ -14,9 +14,9 @@ export default function Navbar() {
                 </ul>
             </nav>
             <div className="md:flex absolute right-[24px] md:right-[72px]">
-                <AiOutlineSearch className="mx-3 text-2xl" />
-                <AiOutlineShoppingCart className="mx-3 text-2xl hidden md:flex" />
-                <AiOutlineUser className="mx-3 text-2xl hidden md:flex" />
+                <AiOutlineSearch className="mx-3 text-2xl text-neutral-800" />
+                <AiOutlineShoppingCart className="mx-3 text-2xl hidden md:flex text-neutral-800" />
+                <AiOutlineUser className="mx-3 text-2xl hidden md:flex text-neutral-800" />
             </div>
         </div>
     )
