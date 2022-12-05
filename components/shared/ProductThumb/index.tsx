@@ -2,7 +2,7 @@ import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 import ResponseImage, { IResponseImage } from "../ResponsiveImage"
 
-interface ProductThumbProps {
+export interface ProductThumbProps {
     name: string,
     price: number,
     rate: number,

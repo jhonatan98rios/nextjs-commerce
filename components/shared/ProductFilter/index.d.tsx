@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react"
-import { IFilters } from "../../Home/ProductsSection/filters.d"
+import { IFilters } from "../../Home/ProductsSection/index.d"
 
 export interface FiltersProp {
     filters: IFilters

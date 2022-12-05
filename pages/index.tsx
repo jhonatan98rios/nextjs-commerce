@@ -1,8 +1,61 @@
 import Head from 'next/head'
 import Hero from '../components/Home/Hero'
 import ProductSection from '../components/Home/ProductsSection'
+import { IProduct } from '../components/Home/ProductsSection/index.d'
 
-export default function Home() {
+const products = [
+  {
+    name: 'Dualsense',
+    price: 800,
+    rate: 5,
+    rateAmount: 100,
+    link: '#',
+    isFavorited: false,
+    image: {
+      desktop: '/mock/desktop/dualshock.png',
+      touch: '/mock/touch/dualshock.png',
+    }
+  },
+  {
+    name: 'Controle Xbox',
+    price: 600,
+    rate: 4,
+    rateAmount: 100,
+    link: '#',
+    isFavorited: true,
+    image: {
+      desktop: '/mock/desktop/xbox-shift.png',
+      touch: '/mock/touch/xbox-shift.png',
+    }
+  },
+  {
+    name: 'Playstation 4 - HD 500gb',
+    price: 3000,
+    rate: 3,
+    rateAmount: 100,
+    link: '#',
+    isFavorited: false,
+    image: {
+      desktop: '/mock/desktop/ps4.png',
+      touch: '/mock/touch/ps4.png',
+    }
+  },
+  {
+    name: 'RTX 3050 - 8GB VRAM',
+    price: 4000,
+    rate: 5,
+    rateAmount: 100,
+    link: '',
+    isFavorited: false,
+    image: {
+      desktop: '/mock/desktop/gpu.png',
+      touch: '/mock/touch/gpu.png',
+    }
+  },
+]
+
+
+function Home({ shuffleProducts }: { shuffleProducts: IProduct[] }) {
   return (
     <div className="home overflow-x-hidden">
       <Head>
@@ -12,9 +65,23 @@ export default function Home() {
       </Head>
 
       <Hero />
-
-      <ProductSection />
-
+      <ProductSection products={shuffleProducts}  />
     </div>
   )
 }
+
+export async function getStaticProps() {
+
+  const shuffleProducts = [...products, ...products]
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+
+  return {
+    props: {
+      shuffleProducts
+    },
+  }
+}
+
+export default Home

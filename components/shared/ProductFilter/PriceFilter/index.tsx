@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch } from "react";
-import { IFilters } from "../../../Home/ProductsSection/filters.d";
+import { IFilters } from "../../../Home/ProductsSection/index.d";
 import { FiltersProp, OrderByProp } from "../index.d";
 
 import CurrencyInput from 'react-currency-input-field';
