@@ -1,0 +1,10 @@
+.product-thumb {
+
+    @media(max-width: 587px) and (min-width: 471px) {
+        zoom: 1.2;
+    }
+
+    @media(max-width: 424px) {
+        zoom: .8;
+    }
+}

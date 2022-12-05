@@ -25,7 +25,7 @@ export default function PriceFilter({ filters, setFilters, setSelected }: PriceF
             
             <div className="flex flex-col">
                 <CurrencyInput
-                    className="border w-40 mx-2 focus:outline-none p-2 rounded-lg"
+                    className="border w-40 mx-2 focus:outline-none p-2 rounded-lg bg-white text-neutral-800"
                     placeholder="Mínimo"
                     fixedDecimalLength={0}
                     allowNegativeValue={false}
@@ -37,7 +37,7 @@ export default function PriceFilter({ filters, setFilters, setSelected }: PriceF
 
             <div className="flex flex-col">
                 <CurrencyInput
-                    className="border w-40 mx-2 focus:outline-none p-2 rounded-lg"
+                    className="border w-40 mx-2 focus:outline-none p-2 rounded-lg bg-white text-neutral-800"
                     placeholder="Máximo"
                     fixedDecimalLength={0}
                     allowNegativeValue={false}
